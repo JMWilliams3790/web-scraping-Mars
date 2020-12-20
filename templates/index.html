@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hot Finds</title>
+  <title>Mars Facts</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
@@ -13,18 +13,62 @@
   <div class="container">
 
     <div class="jumbotron text-center">
-      <h1>Hot Finds On Craigslist</h1>
-      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Find An Awesome Deal!</a></p>
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Learn about Mars!</a></p>
     </div>
 
     <!-- Craigslist Listings -->
-    <div class="row" id="craiglist-listings">
+    <div class="row" id="mars-news">
+      <div class="col-md-6">
+        <h4 class="heading">{{mars.news.news_t}}</h4>        
+      </div>
+      <div class="col-md-6">
+        <h4 class="heading">{{mars.news.news_p}}</h4>        
+      </div>
+    </div>
+    <div class="row" id="mars-table">
       <div class="col-md-12">
-        <h4 class="heading">{{listings.price}} {{listings.headline}}</h4>
-        <small>{{listings.hood}}</small>
+        {{mars.table.table_html|safe}}
+      </div>
+    </div>
+    <div class="row" id="mars-image">
+      <div class="col-md-12">
+        <img src="{{mars.image.featured_image_url}}" style="height:auto; width:100%;" alt="featured_img"></img>   
       </div>
     </div>
 
+    <div class="row" id="mars-hemi">
+      <div class="col-md-6">
+        <h4 class="heading">{{mars.hemisphere[0].title}}</h4>       
+      </div>
+      <div class="col-md-6">
+        <img src="{{mars.hemisphere[0].img_url}}" style="height:auto; width:100%;" alt="hemi_1"></img>   
+      </div>
+    </div>
+    <div class="row" id="mars-hemi">
+      <div class="col-md-6">
+        <h4 class="heading">{{mars.hemisphere[1].title}}</h4>       
+      </div>
+      <div class="col-md-6">
+        <img src={{mars.hemisphere[1].img_url}} style="height:auto; width:100%;" alt="hemi_2"></img>   
+      </div>
+    </div>
+    <div class="row" id="mars-hemi">
+      <div class="col-md-6">
+        <h4 class="heading">{{mars.hemisphere[2].title}}</h4>       
+      </div>
+      <div class="col-md-6">
+        <img src={{mars.hemisphere[2].img_url}} style="height:auto; width:100%;" alt="hemi_3"></img>   
+      </div>
+    </div>
+    <div class="row" id="mars-hemi">
+      <div class="col-md-6">
+        <h4 class="heading">{{mars.hemisphere[3].title}}</h4>       
+      </div>
+      <div class="col-md-6">
+        <img src={{mars.hemisphere[3].img_url}} style="height:auto; width:100%;" alt="hemi_4"></img>   
+      </div>
+    </div>
   </div>
 </body>
 
